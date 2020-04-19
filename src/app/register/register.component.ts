@@ -9,10 +9,28 @@ import { WebServiceService } from '../web-service.service';
 export class RegisterComponent implements OnInit {
   //Form register
   public name: string = "";
+  public email: string = "";
+  public password: string = "";
 
   constructor(private service: WebServiceService) { }
 
   ngOnInit() {
+  }
+  
+  signUp() {
+
+    if (this.name == ''){
+      alert('Name cannot be empty');
+
+    }
+    if (this.email == '') {
+      alert('Email cannot be empty');
+
+    }
+    if (this.password == '') {
+      alert('Password cannot be empty');
+    }
+    
   }
 
 /*

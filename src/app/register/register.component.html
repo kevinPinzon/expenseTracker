@@ -15,7 +15,7 @@
                     <i class="material-icons">face</i>
                   </span>
                 </div>
-                <input type="text" class="form-control" placeholder="First Name" [(ngModel)]="name" name="name">
+                <input type="text" class="form-control" placeholder="First Name" [(ngModel)]="name" name="name" required minlength="3">
               </div>
               <div class="input-group">
                 <div class="input-group-prepend">
@@ -23,7 +23,7 @@
                     <i class="material-icons">mail</i>
                   </span>
                 </div>
-                <input type="email" class="form-control" placeholder="Email" [(ngModel)]="Email" name="Email">
+                <input type="email" class="form-control" placeholder="Email" [(ngModel)]="email" name="email" required>
               </div>
               <div class="input-group">
                 <div class="input-group-prepend">
@@ -32,11 +32,11 @@
                   </span>
                 </div>
                 <input type="password" class="form-control" placeholder="Password" autocomplete=""
-                  [(ngModel)]="password" name="password">
+                  [(ngModel)]="password" name="password" required minlength="5">
               </div>
             </div>
             <div class="footer text-center">
-              <button type="button" class="btn btn-primary btn-lg">Sign up</button>
+              <button type="submit" class="btn btn-primary btn-lg" (click)="signUp()">Sign up</button>
             </div>
           </form>
           <div class="footer text-center">
