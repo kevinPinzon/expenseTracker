@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { WebServiceService } from './web-service.service';
 
 @Component({
@@ -6,10 +6,9 @@ import { WebServiceService } from './web-service.service';
   templateUrl: './app.component.html',
   styleUrls: []
 })
-export class AppComponent {
+export class AppComponent{
 
   constructor(private service: WebServiceService) {
-    
   }
   
 }
