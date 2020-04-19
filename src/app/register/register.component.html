@@ -1,0 +1,49 @@
+<div class="section section-signup page-header" style="background-image: url('./assets/img/city.jpg');">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 col-md-6 mx-auto">
+        <div class="card card-login">
+          <form class="form myForm">
+            <div class="card-header card-header-primary text-center">
+              <h4 class="card-title">Expense Tracker</h4>
+            </div>
+            <p class="description text-center">Join the community</p>
+            <div class="card-body">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <i class="material-icons">face</i>
+                  </span>
+                </div>
+                <input type="text" class="form-control" placeholder="First Name" [(ngModel)]="name" name="name">
+              </div>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <i class="material-icons">mail</i>
+                  </span>
+                </div>
+                <input type="email" class="form-control" placeholder="Email" [(ngModel)]="Email" name="Email">
+              </div>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <i class="material-icons">lock_outline</i>
+                  </span>
+                </div>
+                <input type="password" class="form-control" placeholder="Password" autocomplete=""
+                  [(ngModel)]="password" name="password">
+              </div>
+            </div>
+            <div class="footer text-center">
+              <button type="button" class="btn btn-primary btn-lg">Sign up</button>
+            </div>
+          </form>
+          <div class="footer text-center">
+            Already have an account? <a class="btn btn-primary btn-link btn-wd btn-lg">Log in</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

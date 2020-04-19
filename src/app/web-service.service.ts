@@ -9,6 +9,7 @@ import { catchError, tap } from 'rxjs/operators';
 export class WebServiceService {
   private _postsURL = null;
   public urlServices: any;
+  private headers: any;
 
   constructor(private http: Http) { 
   //prod -
@@ -18,22 +19,36 @@ export class WebServiceService {
     this.urlServices = 'http://localhost:3000/';
 
     this._postsURL = this.urlServices + "api/";
+
+    this.headers = new Headers();
   }
   
-  public register(): Observable<any> {
-    return this.http.get(this._postsURL + 'register')
-      .pipe(
-        tap(_ => this.log('register')),
-        catchError(this.handleError('register', []))
-      );
+  public register(data) {
+    return new Promise((resolve, reject) => {
+      this.http.post(this._postsURL + "register", JSON.stringify(data), { headers: this.headers }).
+        subscribe(res => {
+          this.log('register');
+          resolve(res.json());
+        }, (err) => {
+            this.handleError('register', [])
+            reject(err);
+        });
+
+    });
   }
   
-  public login(): Observable<any> {
-    return this.http.get(this._postsURL + 'auth')
-      .pipe(
-        tap(_ => this.log('login')),
-        catchError(this.handleError('login', []))
-      );
+  public login(data) {
+    return new Promise((resolve, reject) => {
+      this.http.post(this._postsURL + "auth", JSON.stringify(data), { headers: this.headers }).
+        subscribe(res => {
+          this.log('login');
+          resolve(res.json());
+        }, (err) => {
+            this.handleError('login', [])
+            reject(err);
+        });
+
+    });
   }
 
   private handleError<T>(operation = 'operation', result?: T) {
